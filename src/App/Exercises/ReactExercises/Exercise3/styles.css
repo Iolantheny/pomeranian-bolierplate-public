@@ -1,0 +1,30 @@
+.exercise3 {
+  margin: 80px 0 0 250px;
+}
+
+.exercise3 h2 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 69px;
+}
+
+.exercise3 input {
+  width: 160px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #c8cbd1;
+  border-radius: 5px;
+}
+
+.exercise3 p {
+  width: 229px;
+  height: 36px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 36px;
+  color: #222222;
+}
