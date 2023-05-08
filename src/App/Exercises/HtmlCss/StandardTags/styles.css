@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.container {
+  font-size: 20px;
+  font-family: 'Poppins';
+}
+.div1 {
+  font-size: 25px;
+  color: green;
+  font-weight: bolder;
+  font-family: 'Bruno Ace SC';
+}
+.div1::first-letter {
+  font-size: 40px;
+  margin-right: 5px;
+}
+.div1::before {
+  content: '✎';
+}
+.div2 {
+  font-size: 16px;
+  color: red;
+  text-decoration: underline;
+}
+
+.div3 {
+  font-size: 40px;
+  color: blue;
+  display: flex;
+  font-style: italic;
+  text-shadow: 2px 2px #ff0000;
+  font-family: 'DM Sans';
+}
+
+.div4 {
+  font-size: 12px;
+  color: blueviolet;
+  text-transform: capitalize;
+  text-align: right;
+  text-decoration: overline;
+}
+
+.div5 {
+  font-size: 60px;
+  color: rgb(202, 171, 45);
+  font-style: oblique;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.div5 p {
+  text-decoration: line-through;
+  font-family: 'Poppins';
+}
+
+.div6 {
+  font-size: 20px;
+  color: rgb(87, 187, 233);
+  text-transform: uppercase;
+  border: 2px solid rgb(70, 13, 106);
+  text-align: center;
+  padding: 3px;
+}
+
+.div6::after {
+  content: '♚';
+  font-size: 30px;
+  color: yellowgreen;
+}
