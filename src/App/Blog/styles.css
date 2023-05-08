@@ -1,58 +1,88 @@
-.ft-h1 {
-  font-size: 2em;
-  font-weight: bold;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
+.blog {
+  font-style: normal;
+  color: #23213d;
 }
 
-.ft-h3 {
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  font-weight: bold;
+.blog a {
+  text-decoration: none;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  color: #23213d;
 }
 
-.ft-sub {
-  vertical-align: sub;
+.post {
+  padding: 45px 61px;
+  margin: 20px 5px;
+  background: #f4f5f7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.ft-sup {
-  vertical-align: super;
+.post:hover {
+  background: #23213d;
+  color: #f4f5f7;
 }
 
-.ft-bold {
-  font-weight: bold;
+.post:hover ul li a {
+  color: #f4f5f7;
 }
 
-.ft-small {
-  font-size: smaller;
+.post_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
 }
 
-.ft-italic {
+.post_date {
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 24px;
+  letter-spacing: 0.16em;
+  margin-bottom: 0;
+}
+
+.post_title {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 56px;
+  margin-top: 5px;
+}
+
+.post_author {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  margin-bottom: 1px;
+  margin-top: 35px;
+}
+
+.post_info {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 5px;
+}
+
+.quote {
   font-style: italic;
 }
-
-.ft-line {
-  text-decoration: line-through;
+.quote_author {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
 }
 
-.ft-underline {
-  text-decoration: underline;
-}
-
-.ft-h5 {
-  font-size: 0.83em;
-  margin-block-start: 1.67em;
-  margin-block-end: 1.67em;
-  font-weight: bold;
-}
-
-.ft-ul {
-  margin: 16px 0;
-  padding-left: 40px;
-}
-
-.ft-li {
-  display: list-item;
-  list-style-type: disc;
+.post ul li a {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration-line: underline;
+  color: #222222;
+  margin: 15px 0;
 }
