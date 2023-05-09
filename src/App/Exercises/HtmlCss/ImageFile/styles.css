@@ -1,0 +1,8 @@
+.background-image {
+  background-image: url('/public/images/pexels-luddmyla-14707145.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 500px;
+}
