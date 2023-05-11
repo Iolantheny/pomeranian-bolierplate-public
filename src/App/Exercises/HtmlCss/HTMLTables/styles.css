@@ -1,0 +1,62 @@
+.tables table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.tables td,
+th {
+  border: 1px solid #060606;
+  text-align: left;
+  padding: 8px;
+}
+
+.tables tr:hover {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+
+.rating__table {
+  width: 716px;
+  height: 477px;
+  background: #ffffff;
+  box-shadow: 0px 63.6618px 158.447px rgba(0, 0, 0, 0.06),
+    0px 32.2288px 69.073px rgba(0, 0, 0, 0.0405),
+    0px 12.7324px 25.7476px rgba(0, 0, 0, 0.03),
+    0px 2.7852px 9.16022px rgba(0, 0, 0, 0.0195);
+  border-radius: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.rating__table th {
+  width: 173px;
+  height: 57px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  border: none;
+  background: #f5f5f5 !important;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.rating__table td {
+  width: 716px;
+  height: 84px;
+  border: 1.5px solid #ffd5db;
+  text-align: center;
+  padding: 3%;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.rating__table tbody:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.rating__table tbody:nth-child(odd) {
+  background-color: #ffd5db;
+}
