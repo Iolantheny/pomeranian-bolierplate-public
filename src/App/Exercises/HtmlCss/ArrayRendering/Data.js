@@ -1,4 +1,4 @@
-export const Data = [
+export const data = [
   {
     band: 'The Clash',
     yearFormed: 1976,

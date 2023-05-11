@@ -1,5 +1,5 @@
 import './styles.css';
-import { Data } from './Data';
+import { data } from './Data';
 
 export const ArrayRendering = () => {
   return (
@@ -13,18 +13,18 @@ export const ArrayRendering = () => {
             <th>Most Famous Song</th>
           </tr>
         </thead>
-        {Data.map(({ band, yearFormed, albums, mostFamousSong }) => {
-          return (
-            <tbody key={band}>
-              <tr>
+        <tbody>
+          {data.map(({ band, yearFormed, albums, mostFamousSong }) => {
+            return (
+              <tr key={band}>
                 <td>{band}</td>
                 <td>{yearFormed}</td>
                 <td>{albums}</td>
                 <td>{mostFamousSong}</td>
               </tr>
-            </tbody>
-          );
-        })}
+            );
+          })}
+        </tbody>
         <tfoot>
           <tr>
             <td colSpan={2}>Total albums</td>
