@@ -1,5 +1,5 @@
 import './styles.css';
-import { Data } from './data';
+import { data } from './data';
 import { StarIcon } from '../../../Components/Icons/StarIcon';
 
 export const HTMLTables = () => {
@@ -28,8 +28,6 @@ export const HTMLTables = () => {
               <td>Softens</td>
               <td>None</td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td>2</td>
               <td>Softended</td>
@@ -37,8 +35,6 @@ export const HTMLTables = () => {
               <td>No change</td>
               <td>White</td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td>3</td>
               <td>No effect</td>
@@ -46,8 +42,6 @@ export const HTMLTables = () => {
               <td>Softens</td>
               <td>None</td>
             </tr>
-          </tbody>
-          <tbody>
             <tr>
               <td>4</td>
               <td>No effect</td>
@@ -76,11 +70,11 @@ export const HTMLTables = () => {
             <th>PLAYER_ID</th>
             <th>Rating</th>
           </tr>
-        </thead>
-        {Data.map((row) => {
-          return (
-            <tbody key={row.id}>
-              <tr>
+        </thead>{' '}
+        <tbody>
+          {data.map((row) => {
+            return (
+              <tr key={row.id}>
                 <td>{row.location}</td>
                 <td>{row.playerID}</td>
                 <td>
@@ -91,9 +85,9 @@ export const HTMLTables = () => {
                   ))}
                 </td>
               </tr>
-            </tbody>
-          );
-        })}
+            );
+          })}
+        </tbody>
       </table>
     </>
   );

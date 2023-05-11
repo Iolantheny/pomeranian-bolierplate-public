@@ -53,10 +53,10 @@ th {
   border-bottom: none;
 }
 
-.rating__table tbody:nth-child(even) {
+.rating__table tr:nth-child(even) {
   background-color: #ffffff;
 }
 
-.rating__table tbody:nth-child(odd) {
+.rating__table tr:nth-child(odd) {
   background-color: #ffd5db;
 }
