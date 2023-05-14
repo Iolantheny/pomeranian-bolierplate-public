@@ -1,0 +1,39 @@
+.headermenu {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  gap: 6%;
+  flex-basis: 15%;
+}
+
+.headermenu__settings {
+  min-height: 30px;
+  min-width: 30px;
+  cursor: pointer;
+  margin-right: 8%;
+}
+
+.headermenu__logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(21, 95, 37);
+}
+
+.headermenu__text {
+  align-content: center;
+}
+
+.headermenu__text p:first-child {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 10%;
+  font-size: 1.1rem;
+}
+
+.headermenu__text p:last-child {
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: #7e7f81;
+}

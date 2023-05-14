@@ -8,7 +8,6 @@ aside {
 }
 
 aside ul {
-  /* Nadpisanie domyślnych styli przeglądarki */
   padding-inline-start: 1rem;
   list-style-type: none;
 }

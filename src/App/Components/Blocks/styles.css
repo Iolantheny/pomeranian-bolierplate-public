@@ -1,0 +1,13 @@
+.blocks {
+  flex-basis: 65%;
+}
+
+.blocks h1 {
+  font-size: 1.5rem;
+  color: red;
+  font-weight: 400;
+}
+
+.blocks__grid {
+  display: grid;
+}
