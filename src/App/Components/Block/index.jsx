@@ -1,12 +1,17 @@
 import './styles.css';
+import { Link } from 'react-router-dom';
+import { ArrowToRight } from './../Icons/ArrowToRight';
 
-export const Block = ({ name, icon, text }) => {
+export const Block = ({ name, icon, text, slug }) => {
   return (
-    <div className="block">
+    <Link to={slug} className="block">
       <h3>{name}</h3>
-      {icon}
+      <div className="block__icon">{icon}</div>
       <p>{text}</p>
-      <p>zobzacz więcej</p>
-    </div>
+      <div className="block__see-more">
+        <p>zobacz więcej</p>
+        <ArrowToRight />
+      </div>
+    </Link>
   );
 };

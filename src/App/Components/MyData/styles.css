@@ -1,5 +1,6 @@
 .mydata {
   color: #7e7f81;
+  margin: 2% 5%;
 }
 
 .mydata h2 {
@@ -19,4 +20,11 @@
 
 .mydata div p {
   margin: 1% 0;
+}
+
+.mydata__logo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: auto;
 }

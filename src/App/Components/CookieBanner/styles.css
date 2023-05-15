@@ -1,0 +1,70 @@
+.banner {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 99;
+  height: 300px;
+  background: #23213d;
+  padding: 5%;
+  font-family: 'Poppins';
+  font-style: normal;
+  color: #f6f6f6;
+}
+
+.banner__content {
+  flex-basis: 70%;
+}
+
+.banner svg {
+  float: left;
+  margin-right: 2%;
+}
+
+.banner__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.banner__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.banner__btn {
+  flex-basis: 30%;
+  align-self: center;
+}
+
+.banner__btn--agree {
+  width: 164px;
+  height: 50px;
+  background: #fe3756;
+  border-radius: 8px;
+  border: none;
+  color: #f6f6f6;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 3%;
+  cursor: pointer;
+}
+
+.banner__btn--disagree {
+  width: 164px;
+  height: 50px;
+  background: #f6f6f6;
+  border-radius: 8px;
+  border: none;
+  color: #fe3756;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.banner__none {
+  display: none;
+}

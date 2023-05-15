@@ -12,6 +12,7 @@ import { Calendar } from './App/Calendar';
 import { Settings } from './App/Settings';
 import { Blog } from './App/Blog';
 import { FAQ } from './App/FAQ';
+import { CookieBanner } from './App/Components/CookieBanner';
 
 export function App() {
   return (
@@ -30,6 +31,7 @@ export function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      <CookieBanner />
     </BrowserRouter>
   );
 }

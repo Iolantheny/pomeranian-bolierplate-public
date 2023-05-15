@@ -1,3 +1,37 @@
 .block {
-  border: 2px solid black;
+  border: 1px solid rgb(156, 156, 156);
+  border-radius: 15px;
+  flex-basis: 25%;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5%;
+  text-align: center;
+  padding: 2%;
+  box-shadow: 0 1px 10px rgb(156, 156, 156);
+}
+
+.block:hover {
+  color: red;
+  border-color: red;
+  box-shadow: 0 1px 10px red;
+}
+
+.block__icon svg {
+  min-height: 50px;
+  min-width: 50px;
+}
+
+.block:hover .block__icon svg path {
+  stroke: red;
+}
+
+.block__see-more {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block__see-more p {
+  margin-right: 2%;
 }

@@ -8,6 +8,10 @@
   font-weight: 400;
 }
 
-.blocks__grid {
-  display: grid;
+.blocks__content {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10%;
 }
