@@ -27,10 +27,12 @@ export function Exercise() {
   const [text, setText] = useState('');
   const [censure, setCensure] = useState(false);
 
+  const word = 'kurde';
+
   const ShowText = (text) => {
-    if (text.includes('kurde')) {
+    if (text.includes(word)) {
       setCensure(true);
-      setText(text.replace('kurde', '*****'));
+      setText(text.replace(word, '*****'));
     }
     return (
       <div>
