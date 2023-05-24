@@ -14,15 +14,8 @@ export const HitTheMoleGame = () => {
     { value: 3, label: '3 krety', isActive: false },
   ];
 
-  const ActivSettings = (array) => {
-    const newArray = array.find((item) => item.isActive === true);
-    return newArray.value;
-  };
   const [game, setGame] = useState(false);
-  const [gameSettings, setGameSettings] = useState({
-    time: ActivSettings(ChooseTime),
-    moles: ActivSettings(ChooseMoles),
-  });
+  const [gameSettings, setGameSettings] = useState();
   console.log(gameSettings);
   return (
     <div className="molegame">
@@ -35,11 +28,17 @@ export const HitTheMoleGame = () => {
           <div className="molegame-start-content">
             <div className="molegame-start-settings">
               <p>CZAS GRY</p>
-              <SettingButton options={ChooseTime} />
+              <SettingButton
+                options={ChooseTime}
+                setGameSettings={setGameSettings}
+              />
             </div>
             <div className="molegame-start-settings">
               <p>LICZBA KRETÓW</p>
-              <SettingButton options={ChooseMoles} />
+              <SettingButton
+                options={ChooseMoles}
+                setGameSettings={setGameSettings}
+              />
             </div>
             <div className="molegame-start-settings">
               <p>PRZYCISKI STERUJĄCE</p>
