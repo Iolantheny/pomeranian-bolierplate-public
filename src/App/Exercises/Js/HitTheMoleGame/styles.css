@@ -1,0 +1,45 @@
+.molegame {
+  font-family: 'Poppins';
+  font-style: normal;
+}
+
+.molegame h2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.molegame-start-content {
+  margin: 3% 0 0 4%;
+}
+
+.molegame-start-settings {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.molegame-start-settings p {
+  flex-basis: 20%;
+  height: 34px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.molegame-start-settings button {
+  width: 163px;
+  height: 56px;
+  background: #23213d;
+  border: none;
+  border-radius: 8px;
+  margin: 0 2%;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  cursor: pointer;
+}
+
+.game-btn-active {
+  background: #fe3756 !important;
+}
