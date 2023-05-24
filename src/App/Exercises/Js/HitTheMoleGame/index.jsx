@@ -13,14 +13,17 @@ export const HitTheMoleGame = () => {
     { value: 2, label: '2 krety', isActive: false },
     { value: 3, label: '3 krety', isActive: false },
   ];
-  const [game, setGame] = useState(false);
-  const [activeTime, setActiveTime] = useState(
-    ChooseTime.find((time) => time.isActive === true)
-  );
-  const [activeMoles, setActiveMoles] = useState(
-    ChooseMoles.find((mole) => mole.isActive === true)
-  );
 
+  const ActivSettings = (array) => {
+    const newArray = array.find((item) => item.isActive === true);
+    return newArray.value;
+  };
+  const [game, setGame] = useState(false);
+  const [gameSettings, setGameSettings] = useState({
+    time: ActivSettings(ChooseTime),
+    moles: ActivSettings(ChooseMoles),
+  });
+  console.log(gameSettings);
   return (
     <div className="molegame">
       {!game && (
