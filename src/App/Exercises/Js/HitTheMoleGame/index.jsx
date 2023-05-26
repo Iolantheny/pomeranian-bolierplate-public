@@ -20,6 +20,11 @@ export const HitTheMoleGame = () => {
   const [moles, setMoles] = useState(1);
   const [score, setScore] = useState(0);
 
+  const StartGame = () => {
+    setScore(0);
+    setGame(true);
+  };
+
   return (
     <div className="molegame">
       <h2>
@@ -29,6 +34,12 @@ export const HitTheMoleGame = () => {
       {!game && (
         <>
           <div className="molegame-start-content">
+            {score > 0 && (
+              <p className="molegame-start-result">
+                Gratulację! Twój wynik to {score} złapane krety w czasie {time}{' '}
+                minut!
+              </p>
+            )}
             <div className="molegame-start-settings">
               <p>CZAS GRY</p>
               <SettingButton options={ChooseTime} setter={setTime} />
@@ -39,13 +50,19 @@ export const HitTheMoleGame = () => {
             </div>
             <div className="molegame-start-settings">
               <p>PRZYCISKI STERUJĄCE</p>
-              <button onClick={() => setGame(true)}>START</button>
+              <button onClick={() => StartGame()}>START</button>
             </div>
           </div>
         </>
       )}
       {game && (
-        <Game time={time} moles={moles} setGame={setGame} score={score} />
+        <Game
+          time={time}
+          moles={moles}
+          setGame={setGame}
+          score={score}
+          setScore={setScore}
+        />
       )}
     </div>
   );

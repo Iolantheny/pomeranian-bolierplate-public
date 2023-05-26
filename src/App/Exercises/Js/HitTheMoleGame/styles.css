@@ -13,6 +13,13 @@
   margin: 3% 0 0 4%;
 }
 
+.molegame-start-result {
+  text-align: center;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 48px;
+}
+
 .molegame-start-settings {
   display: flex;
   flex-wrap: nowrap;
@@ -57,4 +64,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20%;
+}
+
+.mole-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ebebeb;
+  border-radius: 8px;
+  width: 103.77px;
+  height: 103.77px;
+  margin: 2%;
+  cursor: pointer;
+}
+
+.correct-field {
+  background: #e2fbd7;
+}
+
+.correct-field {
+  background: #f3aea8;
 }
