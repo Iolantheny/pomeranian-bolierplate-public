@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { SettingButton } from './components/SettingButton';
+import { Game } from './components/Game';
 
 export const HitTheMoleGame = () => {
   const ChooseTime = [
@@ -15,30 +16,26 @@ export const HitTheMoleGame = () => {
   ];
 
   const [game, setGame] = useState(false);
-  const [gameSettings, setGameSettings] = useState();
-  console.log(gameSettings);
+  const [time, setTime] = useState(1);
+  const [moles, setMoles] = useState(1);
+  const [score, setScore] = useState(0);
+
   return (
     <div className="molegame">
+      <h2>
+        Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
+        którym się pojawił.{' '}
+      </h2>
       {!game && (
         <>
-          <h2>
-            Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
-            którym się pojawił.{' '}
-          </h2>
           <div className="molegame-start-content">
             <div className="molegame-start-settings">
               <p>CZAS GRY</p>
-              <SettingButton
-                options={ChooseTime}
-                setGameSettings={setGameSettings}
-              />
+              <SettingButton options={ChooseTime} setter={setTime} />
             </div>
             <div className="molegame-start-settings">
               <p>LICZBA KRETÓW</p>
-              <SettingButton
-                options={ChooseMoles}
-                setGameSettings={setGameSettings}
-              />
+              <SettingButton options={ChooseMoles} setter={setMoles} />
             </div>
             <div className="molegame-start-settings">
               <p>PRZYCISKI STERUJĄCE</p>
@@ -46,6 +43,9 @@ export const HitTheMoleGame = () => {
             </div>
           </div>
         </>
+      )}
+      {game && (
+        <Game time={time} moles={moles} setGame={setGame} score={score} />
       )}
     </div>
   );

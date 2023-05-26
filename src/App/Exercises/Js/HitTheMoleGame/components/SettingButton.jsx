@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from './Button';
 
-export const SettingButton = ({ options, setGameSettings }) => {
+export const SettingButton = ({ options, setter }) => {
   const [newArray, setNewArray] = useState(options);
   const handleClick = (value) => {
     setNewArray(
@@ -11,30 +11,13 @@ export const SettingButton = ({ options, setGameSettings }) => {
     );
   };
 
-  const ActivSettingsTime = (array) => {
-    if (array[0].label === '1 minuta') {
-      const newArray = array.find((item) => item.isActive === true);
-      return newArray.value;
-    }
-  };
-
-  const ActivSettingsMoles = (array) => {
-    if (array[0].label === '1 kret') {
-      const newArray = array.find((item) => item.isActive === true);
-      return newArray.value;
-    }
-  };
-
   const ActivSettings = (array) => {
     const newArray = array.find((item) => item.isActive === true);
     return newArray.value;
   };
 
   useEffect(() => {
-    setGameSettings({
-      time: ActivSettingsTime(newArray),
-      moles: ActivSettingsMoles(newArray),
-    });
+    setter(ActivSettings(newArray));
   }, [newArray]);
 
   return (

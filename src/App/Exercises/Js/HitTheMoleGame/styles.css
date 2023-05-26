@@ -43,3 +43,18 @@
 .game-btn-active {
   background: #fe3756 !important;
 }
+
+.molegame-setting {
+  margin: 0 2%;
+  width: 163px;
+  height: 56px;
+  background: #ebebeb;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
