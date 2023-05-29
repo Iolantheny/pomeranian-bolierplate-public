@@ -2,9 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { MoleImg } from '../../../../Components/Icons/MoleImg';
 
 export const Game = ({ time, moles, setGame, score, setScore }) => {
-  const SizeOfBoard = 10;
+  let SizeOfBoard = 10;
+
+  if (moles === 2) {
+    SizeOfBoard = 15;
+  }
+
+  if (moles === 3) {
+    SizeOfBoard = 20;
+  }
+
   const RandomArray = [...new Array(moles)].map(() =>
-    Math.round(Math.random() * SizeOfBoard)
+    Math.round(Math.random() * (SizeOfBoard - 1))
   );
   const [timer, setTimer] = useState({ minutes: time, seconds: 0 });
   const [field, setField] = useState(RandomArray);
@@ -12,10 +21,21 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
   const [wrongField, setWrongField] = useState(false);
 
   useEffect(() => {
-    setTimeout(
-      setField(RandomArray) && setCorrectField(false) && setWrongField(false),
-      5000
-    );
+    if (moles === 1) {
+      setTimeout(() => setField(RandomArray), 1000);
+    }
+    if (moles === 2) {
+      setTimeout(() => setField(RandomArray), 500);
+    }
+
+    if (moles === 3) {
+      setTimeout(() => setField(RandomArray), 350);
+    }
+
+    setTimeout(() => {
+      setCorrectField(false);
+      setWrongField(false);
+    }, 300);
 
     setTimeout(() => {
       if (timer.seconds > 0) {
@@ -41,6 +61,7 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
   };
 
   const WrongClick = () => {
+    setScore(score - 1);
     setWrongField(true);
   };
 
@@ -74,7 +95,7 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
                     className={`mole-field ${
                       correctField ? 'correct-field' : ''
                     }`}
-                    onClick={() => CorrectClick()}
+                    onClick={(e) => CorrectClick(e)}
                   >
                     <MoleImg />
                   </div>
