@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MoleImg } from '../../../../Components/Icons/MoleImg';
+import { FieldWithMole } from './FieldWithMole';
+import { EmptyField } from './EmptyField';
 
 export const Game = ({ time, moles, setGame, score, setScore }) => {
   let SizeOfBoard = 10;
@@ -17,8 +18,6 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
   );
   const [timer, setTimer] = useState({ minutes: time, seconds: 0 });
   const [field, setField] = useState(RandomArray);
-  const [correctField, setCorrectField] = useState(false);
-  const [wrongField, setWrongField] = useState(false);
 
   useEffect(() => {
     if (moles === 1) {
@@ -31,11 +30,6 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
     if (moles === 3) {
       setTimeout(() => setField(RandomArray), 350);
     }
-
-    setTimeout(() => {
-      setCorrectField(false);
-      setWrongField(false);
-    }, 300);
 
     setTimeout(() => {
       if (timer.seconds > 0) {
@@ -53,16 +47,6 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
 
   const EndGame = () => {
     setGame(false);
-  };
-
-  const CorrectClick = () => {
-    setScore(score + 1);
-    setCorrectField(true);
-  };
-
-  const WrongClick = () => {
-    setScore(score - 1);
-    setWrongField(true);
   };
 
   return (
@@ -90,24 +74,10 @@ export const Game = ({ time, moles, setGame, score, setScore }) => {
             .map((_, n) => {
               if (field.includes(n)) {
                 return (
-                  <div
-                    key={n}
-                    className={`mole-field ${
-                      correctField ? 'correct-field' : ''
-                    }`}
-                    onClick={(e) => CorrectClick(e)}
-                  >
-                    <MoleImg />
-                  </div>
+                  <FieldWithMole key={n} setScore={setScore} score={score} />
                 );
               } else {
-                return (
-                  <div
-                    key={n}
-                    className={`mole-field ${wrongField ? 'wrong-field' : ''}`}
-                    onClick={() => WrongClick()}
-                  />
-                );
+                return <EmptyField key={n} setScore={setScore} score={score} />;
               }
             })}
         </div>
