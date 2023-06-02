@@ -6,6 +6,8 @@ import { blockRouterMetaData as blockRouterMetaDataJsFunction1 } from './Exercis
 import { blockRouterMetaData as blockRouterMetaDataJsFunctions } from './JSFuncions/router-data';
 import { blockRouterMetaData as blockRouterMetaDataBlock22WarmUp } from './SetTimeOut/router-data';
 import { blockRouterMetaData as blockRouterMetaDataHitTheMoleGame } from './HitTheMoleGame/router-data';
+import { blockRouterMetaData as blockRouterMetaDataExercise } from './Exercise/router-data';
+import { blockRouterMetaData as blockRouterMetaDataMemoGame } from './MemoGame/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
@@ -14,5 +16,7 @@ export const blockRouterMetaData = [
   blockRouterMetaDataJsFunctions,
   blockRouterMetaDataBlock22WarmUp,
   blockRouterMetaDataHitTheMoleGame,
+  blockRouterMetaDataExercise,
+  blockRouterMetaDataMemoGame,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

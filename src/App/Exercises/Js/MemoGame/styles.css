@@ -1,0 +1,90 @@
+.memo-game {
+  font-family: 'Poppins';
+  font-style: normal;
+  margin: 3% 0 0 4%;
+}
+
+.memo-game h2 {
+  margin: 2% 0 5% -2%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+}
+.menu {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.menu-label {
+  flex-basis: 20%;
+  height: 34px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+  margin-bottom: 5%;
+}
+
+.menu button {
+  width: 163px;
+  height: 56px;
+  background: #23213d;
+  border: none;
+  border-radius: 8px;
+  margin: 0 2%;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  cursor: pointer;
+}
+
+.memogame-setting {
+  margin: 0 2%;
+  width: 163px;
+  height: 56px;
+  background: #ebebeb;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  margin: 20px 30%;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.board-field {
+  width: 100px;
+  height: 100px;
+  background-color: #ebebeb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 150px;
+}
+
+.field-clicked {
+  background-color: #c5c5c5;
+}
+
+.field-paired {
+  background-color: #e2fbd7;
+}
+
+.memogame-result-text {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 48px;
+}
