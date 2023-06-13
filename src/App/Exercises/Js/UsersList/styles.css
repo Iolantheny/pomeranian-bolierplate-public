@@ -1,0 +1,91 @@
+.userslist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  color: #222222;
+  gap: 10px;
+}
+
+.userslist-adduser-content {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userslist-adduser-content p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  width: 100px;
+  height: 27px;
+}
+
+.userslist-adduser-content input {
+  width: 285px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #c8cbd1;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  padding: 3%;
+}
+
+.userslist-adduser {
+  margin: 5%;
+}
+
+.userslist-adduser button {
+  width: 163px;
+  height: 56px;
+  background: #fe3756;
+  border: 1px solid #fe3756;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+  margin: 5%;
+  cursor: pointer;
+}
+
+.userslist-list {
+  width: 30%;
+  border: 1px solid #c8cbd1;
+  border-radius: 5px;
+  padding: 2%;
+}
+
+.userslist-list div {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.userslist-list p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.userslist-list button {
+  width: 26px;
+  height: 26px;
+  background: #fe3756;
+  border: 1px solid #fe3756;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  margin: 5%;
+  cursor: pointer;
+}
