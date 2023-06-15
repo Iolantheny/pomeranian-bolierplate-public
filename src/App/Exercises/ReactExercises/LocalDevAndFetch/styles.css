@@ -37,6 +37,7 @@
 }
 
 .todoslist-button {
+  margin-left: 8%;
   cursor: pointer;
   margin: 2% auto;
   padding: 20px 36px;
@@ -98,11 +99,16 @@
   right: 2%;
 }
 
-.task-checked-bin {
-  stroke: #000;
+.task-checked-icons {
   position: absolute;
   top: 8%;
   right: 10%;
+  width: 10%;
+}
+
+.task-checked-bin {
+  stroke: #000;
+  margin: 2%;
 }
 
 .task-checked-bin path {
@@ -202,4 +208,11 @@
 
 .todolist-form-add {
   background: #fe3756;
+}
+
+.todolist-form-error {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  color: #e12b1b;
 }

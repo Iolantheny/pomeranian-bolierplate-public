@@ -1,5 +1,6 @@
 import React from 'react';
 import { BinIcon } from '../../../../Components/Icons/BinIcon';
+import { PencilIcon } from '../../../../Components/Icons/PencilIcon';
 
 const parseDate = (date) => {
   const newDate = new Date(date);
@@ -29,13 +30,15 @@ export const Task = ({
             ✔
           </p>
           <div onClick={() => deleteTask(id)}>
+            <PencilIcon />
             <BinIcon />
           </div>
         </div>
       )}
       {isDone && (
         <>
-          <div onClick={() => deleteTask(id)}>
+          <div onClick={() => deleteTask(id)} className="task-checked-icons">
+            <PencilIcon className="task-checked-bin" />
             <BinIcon className="task-checked-bin" />
           </div>
           <div className="task-checked">

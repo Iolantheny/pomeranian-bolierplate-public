@@ -9,6 +9,7 @@ export const LocalDevAndFetch = () => {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [formError, setFormEffor] = useState(false);
 
   const getTodosList = async () => {
     const respons = await fetch('http://localhost:3333/api/todo');
@@ -29,6 +30,7 @@ export const LocalDevAndFetch = () => {
 
   const deleteTask = async (id) => {
     await fetch(`http://localhost:3333/api/todo/${id}`, { method: 'DELETE' });
+    getTodosList();
   };
 
   const addTaskForm = () => {
@@ -39,6 +41,21 @@ export const LocalDevAndFetch = () => {
     await fetch(`http://localhost:3333/api/todo/${id}/markAsDone`, {
       method: 'PUT',
     });
+    getTodosList();
+  };
+
+  const addTask = async (title, author, note) => {
+    if (!title || !author || !note) {
+      setFormEffor(true);
+    }
+
+    const newTask = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, note, author }),
+    };
+    await fetch('http://localhost:3333/api/todo/', newTask);
+    getTodosList();
   };
 
   return (
@@ -55,7 +72,11 @@ export const LocalDevAndFetch = () => {
 
       {isLoading && <p className="todoslist-loading">Loading...</p>}
       {error && (
-        <InfoContent text="Przepraszamy. Nie udało się pobrać listy zadań." />
+        <InfoContent
+          text="Przepraszamy. Nie udało się pobrać listy zadań."
+          label="ODŚWIEŻ WIDOK"
+          onClick={() => window.location.reload(false)}
+        />
       )}
       {!error && todos.length !== 0 && !showForm && (
         <>
@@ -80,10 +101,20 @@ export const LocalDevAndFetch = () => {
           </button>
         </>
       )}
-      {!error && todos.length === 0 && !isLoading && (
-        <InfoContent text="Brawo! Nie masz aktualnie żadnych zadań do zrealizowania." />
+      {!error && todos.length === 0 && !isLoading && !showForm && (
+        <InfoContent
+          text="Brawo! Nie masz aktualnie żadnych zadań do zrealizowania."
+          label="DODAJ ZADANIE"
+          onClick={addTaskForm}
+        />
       )}
-      {showForm && !error && <AddTaskForm setShowForm={setShowForm} />}
+      {showForm && !error && (
+        <AddTaskForm
+          setShowForm={setShowForm}
+          addTask={addTask}
+          formError={formError}
+        />
+      )}
     </div>
   );
 };
