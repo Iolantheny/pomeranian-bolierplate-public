@@ -17,6 +17,7 @@ export const Task = ({
   note,
   deleteTask,
   markAsDone,
+  showEditForm,
 }) => {
   return (
     <div className={`task ${isDone ? 'task-done' : ''}`}>
@@ -29,17 +30,23 @@ export const Task = ({
           <p className="task-notchecked-symbol" onClick={() => markAsDone(id)}>
             ✔
           </p>
-          <div onClick={() => deleteTask(id)}>
+          <div onClick={() => showEditForm(id, title, note)}>
             <PencilIcon />
+          </div>
+          <div onClick={() => deleteTask(id)}>
             <BinIcon />
           </div>
         </div>
       )}
       {isDone && (
         <>
-          <div onClick={() => deleteTask(id)} className="task-checked-icons">
-            <PencilIcon className="task-checked-bin" />
-            <BinIcon className="task-checked-bin" />
+          <div className="task-checked-icons">
+            <div onClick={() => showEditForm(id, title, note)}>
+              <PencilIcon className="task-checked-bin" />
+            </div>
+            <div onClick={() => deleteTask(id)}>
+              <BinIcon className="task-checked-bin" />
+            </div>
           </div>
           <div className="task-checked">
             <p className="task-checked-symbol">✔</p>

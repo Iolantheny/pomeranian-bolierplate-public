@@ -3,6 +3,7 @@ import './styles.css';
 import { Task } from './components/Task';
 import { InfoContent } from './components/InfoContent';
 import { AddTaskForm } from './components/AddTaskForm';
+import { EditForm } from './components/EditForm';
 
 export const LocalDevAndFetch = () => {
   const [todos, setTodos] = useState([]);
@@ -10,6 +11,8 @@ export const LocalDevAndFetch = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [formError, setFormEffor] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+  const [toEdit, setToEdit] = useState();
 
   const getTodosList = async () => {
     const respons = await fetch('http://localhost:3333/api/todo');
@@ -37,6 +40,11 @@ export const LocalDevAndFetch = () => {
     setShowForm(true);
   };
 
+  const showEditForm = (id, title, note) => {
+    setShowEdit(true);
+    setToEdit({ id: id, title: title, note: note });
+  };
+
   const markAsDone = async (id) => {
     await fetch(`http://localhost:3333/api/todo/${id}/markAsDone`, {
       method: 'PUT',
@@ -55,6 +63,16 @@ export const LocalDevAndFetch = () => {
       body: JSON.stringify({ title, note, author }),
     };
     await fetch('http://localhost:3333/api/todo/', newTask);
+    getTodosList();
+  };
+
+  const updateTask = async (id, newTitle, newNote) => {
+    const update = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: newTitle, note: newNote }),
+    };
+    await fetch(`http://localhost:3333/api/todo/${id}`, update);
     getTodosList();
   };
 
@@ -78,7 +96,7 @@ export const LocalDevAndFetch = () => {
           onClick={() => window.location.reload(false)}
         />
       )}
-      {!error && todos.length !== 0 && !showForm && (
+      {!error && todos.length !== 0 && !showForm && !showEdit && (
         <>
           {todos.map((task) => {
             return (
@@ -93,6 +111,7 @@ export const LocalDevAndFetch = () => {
                 note={task.note}
                 deleteTask={deleteTask}
                 markAsDone={markAsDone}
+                showEditForm={showEditForm}
               />
             );
           })}
@@ -113,6 +132,13 @@ export const LocalDevAndFetch = () => {
           setShowForm={setShowForm}
           addTask={addTask}
           formError={formError}
+        />
+      )}
+      {showEdit && !error && (
+        <EditForm
+          setShowEdit={setShowEdit}
+          toEdit={toEdit}
+          updateTask={updateTask}
         />
       )}
     </div>
