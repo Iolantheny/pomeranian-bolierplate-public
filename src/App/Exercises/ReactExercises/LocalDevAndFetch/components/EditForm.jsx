@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const EditForm = ({ setShowEdit, toEdit, updateTask }) => {
+export const EditForm = ({ setShowEdit, toEdit, updateTask, formError }) => {
   const [newTitle, setNewTitle] = useState(toEdit.title);
   const [newNote, setNewNote] = useState(toEdit.note);
 
@@ -22,6 +22,11 @@ export const EditForm = ({ setShowEdit, toEdit, updateTask }) => {
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
         />
+        {formError && (
+          <p className="todolist-form-error">
+            Wystąpił błąd, spróbuj ponownie.
+          </p>
+        )}
         <div>
           <button
             className="todolist-form-back"

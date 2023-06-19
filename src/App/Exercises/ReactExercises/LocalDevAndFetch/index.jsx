@@ -4,10 +4,12 @@ import { Task } from './components/Task';
 import { InfoContent } from './components/InfoContent';
 import { AddTaskForm } from './components/AddTaskForm';
 import { EditForm } from './components/EditForm';
+import { handleRequest } from './functions/handleRequest';
 
 export const LocalDevAndFetch = () => {
   const [todos, setTodos] = useState([]);
   const [error, setError] = useState();
+  const [taskError, setTaskError] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [formError, setFormEffor] = useState(false);
@@ -15,16 +17,17 @@ export const LocalDevAndFetch = () => {
   const [toEdit, setToEdit] = useState();
 
   const getTodosList = async () => {
-    const respons = await fetch('http://localhost:3333/api/todo');
-    const responsJSON = await respons.json();
-    setIsLoading(false);
-    if (respons.status === 200) {
-      setTodos(responsJSON);
-    }
-
-    if (respons.status !== 200 && responsJSON.message) {
-      setError(responsJSON.message);
-    }
+    setTaskError();
+    handleRequest('', 'GET')
+      .then((respons) => {
+        setTodos(respons);
+      })
+      .catch((errorMessage) => {
+        setError(errorMessage);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -32,8 +35,13 @@ export const LocalDevAndFetch = () => {
   }, []);
 
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:3333/api/todo/${id}`, { method: 'DELETE' });
-    getTodosList();
+    handleRequest(id, 'DELETE')
+      .then(() => {
+        getTodosList();
+      })
+      .catch((errorMessage) => {
+        setTaskError({ errorMessage, id });
+      });
   };
 
   const addTaskForm = () => {
@@ -46,10 +54,13 @@ export const LocalDevAndFetch = () => {
   };
 
   const markAsDone = async (id) => {
-    await fetch(`http://localhost:3333/api/todo/${id}/markAsDone`, {
-      method: 'PUT',
-    });
-    getTodosList();
+    handleRequest(`${id}/markAsDone`, 'PUT')
+      .then(() => {
+        getTodosList();
+      })
+      .catch((errorMessage) => {
+        setTaskError({ errorMessage, id });
+      });
   };
 
   const addTask = async (title, author, note) => {
@@ -57,23 +68,23 @@ export const LocalDevAndFetch = () => {
       setFormEffor(true);
     }
 
-    const newTask = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, note, author }),
-    };
-    await fetch('http://localhost:3333/api/todo/', newTask);
-    getTodosList();
+    handleRequest('', 'POST', { title, note, author })
+      .then(() => {
+        getTodosList();
+      })
+      .catch(() => {
+        setFormEffor(true);
+      });
   };
 
   const updateTask = async (id, newTitle, newNote) => {
-    const update = {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: newTitle, note: newNote }),
-    };
-    await fetch(`http://localhost:3333/api/todo/${id}`, update);
-    getTodosList();
+    handleRequest(id, 'PUT', { title: newTitle, note: newNote })
+      .then(() => {
+        getTodosList();
+      })
+      .catch(() => {
+        setFormEffor(true);
+      });
   };
 
   return (
@@ -112,6 +123,7 @@ export const LocalDevAndFetch = () => {
                 deleteTask={deleteTask}
                 markAsDone={markAsDone}
                 showEditForm={showEditForm}
+                taskError={taskError}
               />
             );
           })}
@@ -139,6 +151,7 @@ export const LocalDevAndFetch = () => {
           setShowEdit={setShowEdit}
           toEdit={toEdit}
           updateTask={updateTask}
+          formError={formError}
         />
       )}
     </div>

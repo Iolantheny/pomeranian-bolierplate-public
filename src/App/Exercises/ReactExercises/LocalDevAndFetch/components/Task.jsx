@@ -18,6 +18,7 @@ export const Task = ({
   deleteTask,
   markAsDone,
   showEditForm,
+  taskError,
 }) => {
   return (
     <div className={`task ${isDone ? 'task-done' : ''}`}>
@@ -36,6 +37,11 @@ export const Task = ({
           <div onClick={() => deleteTask(id)}>
             <BinIcon />
           </div>
+          {taskError && taskError.id === id && (
+            <p className="task-notdone-error">
+              Przepraszamy błąd wykonania akcji
+            </p>
+          )}
         </div>
       )}
       {isDone && (
@@ -47,6 +53,11 @@ export const Task = ({
             <div onClick={() => deleteTask(id)}>
               <BinIcon className="task-checked-bin" />
             </div>
+            {taskError && taskError.id === id && (
+              <p className="task-notdone-error">
+                Przepraszamy błąd wykonania akcji
+              </p>
+            )}
           </div>
           <div className="task-checked">
             <p className="task-checked-symbol">✔</p>
