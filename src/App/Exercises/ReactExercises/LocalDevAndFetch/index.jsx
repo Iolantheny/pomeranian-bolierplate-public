@@ -12,7 +12,7 @@ export const LocalDevAndFetch = () => {
   const [taskError, setTaskError] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const [formError, setFormEffor] = useState(false);
+  const [formError, setFormError] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [toEdit, setToEdit] = useState();
 
@@ -65,16 +65,16 @@ export const LocalDevAndFetch = () => {
 
   const addTask = async (title, author, note) => {
     if (!title || !author || !note) {
-      setFormEffor(true);
+      setFormError(true);
+    } else {
+      handleRequest('', 'POST', { title, note, author })
+        .then(() => {
+          getTodosList();
+        })
+        .catch(() => {
+          setFormError(true);
+        });
     }
-
-    handleRequest('', 'POST', { title, note, author })
-      .then(() => {
-        getTodosList();
-      })
-      .catch(() => {
-        setFormEffor(true);
-      });
   };
 
   const updateTask = async (id, newTitle, newNote) => {
@@ -83,7 +83,7 @@ export const LocalDevAndFetch = () => {
         getTodosList();
       })
       .catch(() => {
-        setFormEffor(true);
+        setFormError(true);
       });
   };
 
