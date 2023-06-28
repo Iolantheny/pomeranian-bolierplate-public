@@ -7,6 +7,7 @@ import { Exercise2RouterMetaData } from './Exercise2/router-data';
 import { Exercise3RouterMetaData } from './Exercise3/router-data';
 import { SliderRouterMetaData } from './MaterialUI/router-data';
 import { BooleansRouterMetaData } from './Booleans/router-data';
+import { LocalDevAndFetchRouterMetaData } from './LocalDevAndFetch/router-data';
 
 export const blockRouterMetaData = [
   SubRouteExampleMetaData,
@@ -16,5 +17,6 @@ export const blockRouterMetaData = [
   Exercise3RouterMetaData,
   SliderRouterMetaData,
   BooleansRouterMetaData,
+  LocalDevAndFetchRouterMetaData,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

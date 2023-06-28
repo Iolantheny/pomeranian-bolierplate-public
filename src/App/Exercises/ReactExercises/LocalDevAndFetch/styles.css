@@ -1,0 +1,229 @@
+.todoslist {
+  font-family: 'Poppins';
+  font-style: normal;
+}
+
+.todoslist-loading {
+  width: 100%;
+  margin: 5% auto;
+  font-size: 2rem;
+  color: #fe3756;
+}
+
+.todoslist h1 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.todoslist-info {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.todoslist-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.todoslist-content p {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 34px;
+  flex-basis: 100%;
+}
+
+.todoslist-button {
+  margin-left: 8%;
+  cursor: pointer;
+  margin: 2% auto;
+  padding: 20px 36px;
+  gap: 16px;
+  width: 326px;
+  background: #fe3756;
+  border: 1px solid #fe3756;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.task {
+  flex-direction: row;
+  align-items: center;
+  padding: 18px 24px;
+  gap: 16px;
+  width: 629px;
+  background: #ffffff;
+  border-left: 5px solid #c8cbd1;
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.12), 0px 3px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  margin: 3%;
+  position: relative;
+  cursor: pointer;
+}
+
+.task-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.task-info {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #6b7280;
+  margin-bottom: 0.5%;
+}
+
+.task-note {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #6b7280;
+  margin-top: 5%;
+}
+
+.task-done {
+  background-color: #c8cbd1;
+}
+.task-checked {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+}
+
+.task-checked-icons {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  width: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-checked-bin {
+  stroke: #000;
+  margin: 2%;
+}
+
+.task-checked-bin path {
+  stroke: #000;
+}
+
+.task-checked-symbol {
+  color: #07c23b;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.task-notchecked-symbol {
+  color: #6b7280;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.task-notdone {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.task-notdone-error {
+  color: #fe3756;
+  position: absolute;
+  width: 200px;
+  top: 40%;
+  right: 0;
+}
+
+.task-notdone-bin svg path {
+  stroke: #6b7280;
+}
+
+.todoslist-btn-add {
+  width: 40px;
+  height: 40px;
+  background: #fe3756;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  float: right;
+  margin-right: 10%;
+}
+.todolist-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+
+.todolist-form p {
+  flex-basis: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.todolist-form input,
+.todolist-form textarea {
+  flex-basis: 60%;
+  padding: 1%;
+  background: #ffffff;
+  border: 1px solid #c8cbd1;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+}
+.todolist-form input:focus,
+.todolist-form textarea:focus {
+  outline: none;
+}
+
+.todolist-form div {
+  flex-basis: 100%;
+}
+
+.todolist-form div button {
+  width: 220px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+  margin: 5%;
+  padding: 2%;
+  cursor: pointer;
+}
+
+.todolist-form-back {
+  background: #23213d;
+}
+
+.todolist-form-add {
+  background: #fe3756;
+}
+
+.todolist-form-error {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  color: #e12b1b;
+}
